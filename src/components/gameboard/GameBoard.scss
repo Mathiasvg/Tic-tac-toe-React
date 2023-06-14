@@ -1,0 +1,20 @@
+$tileSize: 100px;
+
+.playing-field-container {
+  display: flex;
+  justify-content: center;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, $tileSize);
+    gap: 4px;
+    margin: 1rem;
+    padding: 0;
+    background-color: grey;
+  }
+}
