@@ -21,19 +21,19 @@ export default function App() {
       return;
     }
     currentPlayer
-      ? setPlayingFieldStatus((current) => {
-          current[index] = 'O';
-          return [...current];
+      ? setPlayingFieldStatus((pfs) => {
+          pfs[index] = 'O';
+          return [...pfs];
         })
-      : setPlayingFieldStatus((current) => {
-          current[index] = 'X';
-          return [...current];
+      : setPlayingFieldStatus((pfs) => {
+          pfs[index] = 'X';
+          return [...pfs];
         });
 
     changePlayer();
   };
 
-  const changePlayer = () => setCurrentPlayer((current) => (current + 1) % 2);
+  const changePlayer = () => setCurrentPlayer((cp) => (cp + 1) % 2);
   const replay = () => setPlayingFieldStatus(Array(9).fill(''));
 
   const currentPlayerName = `Player ${currentPlayer + 1}`;
